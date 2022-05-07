@@ -1,0 +1,153 @@
+import React from 'react';
+
+const BgLayout = ({ children }) => {
+  return (
+    <div className="bg-[#040d21] h-screen overflow-hidden relative">
+      <img
+        src="https://github.githubassets.com/images/modules/site/home/hero-glow.svg"
+        alt="Glowing bg"
+        className="absolute opacity-20 pointer-events-none z-1 inset-0 object-cover top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+      ></img>
+
+      <div class="absolute inset-0 opacity-5">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1439.86 809.94"
+          preserveAspectRatio="none"
+        >
+          <line
+            x1="0.43"
+            y1="0.47"
+            x2="1439.43"
+            y2="809.47"
+            fill="none"
+            stroke="#fff"
+            strokeDasharray="3"
+          ></line>
+          <line
+            x1="1439.43"
+            y1="0.47"
+            x2="0.43"
+            y2="809.47"
+            fill="none"
+            stroke="#fff"
+            strokeDasharray="3"
+          ></line>
+          <line
+            x1="1439.43"
+            y1="0.47"
+            x2="480.43"
+            y2="809.47"
+            fill="none"
+            stroke="#fff"
+            strokeDasharray="3"
+          ></line>
+          <line
+            x1="0.43"
+            y1="0.47"
+            x2="960.43"
+            y2="809.47"
+            fill="none"
+            stroke="#fff"
+            strokeDasharray="3"
+          ></line>
+          <line
+            x1="0.43"
+            y1="0.47"
+            x2="479.43"
+            y2="809.47"
+            fill="none"
+            stroke="#fff"
+            strokeDasharray="3"
+          ></line>
+          <line
+            x1="0.43"
+            y1="0.47"
+            x2="1439.43"
+            y2="540.47"
+            fill="none"
+            stroke="#fff"
+            strokeDasharray="3"
+          ></line>
+          <line
+            x1="1439.43"
+            y1="0.47"
+            x2="960.43"
+            y2="809.47"
+            fill="none"
+            stroke="#fff"
+            strokeDasharray="3"
+          ></line>
+          <line
+            x1="1439.43"
+            y1="0.47"
+            x2="0.43"
+            y2="540.47"
+            fill="none"
+            stroke="#fff"
+            strokeDasharray="3"
+          ></line>
+          <line
+            x1="480.43"
+            y1="0.47"
+            x2="1439.43"
+            y2="809.47"
+            fill="none"
+            stroke="#fff"
+            strokeDasharray="3"
+          ></line>
+          <line
+            x1="960.43"
+            y1="0.47"
+            x2="0.43"
+            y2="809.47"
+            fill="none"
+            stroke="#fff"
+            strokeDasharray="3"
+          ></line>
+          <line
+            x1="479.43"
+            y1="0.47"
+            x2="0.43"
+            y2="809.47"
+            fill="none"
+            stroke="#fff"
+            strokeDasharray="3"
+          ></line>
+          <line
+            x1="960.43"
+            y1="0.47"
+            x2="1439.43"
+            y2="809.47"
+            fill="none"
+            stroke="#fff"
+            strokeDasharray="3"
+          ></line>
+          <line
+            x1="0.43"
+            y1="809.47"
+            x2="1439.43"
+            y2="270.47"
+            fill="none"
+            stroke="#fff"
+            strokeDasharray="3"
+          ></line>
+          <line
+            x1="1439.43"
+            y1="809.47"
+            x2="0.43"
+            y2="270.47"
+            fill="none"
+            stroke="#fff"
+            strokeDasharray="3"
+          ></line>
+        </svg>
+      </div>
+      <section className="absolute inset-0 overflow-y-scroll">
+        {children}
+      </section>
+    </div>
+  );
+};
+
+export default BgLayout;
