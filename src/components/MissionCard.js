@@ -6,19 +6,23 @@ const MissionCard = ({ mission }) => {
   const [showDetails, setShowDetails] = useState(false);
   return (
     <div className="w-full break-inside-avoid mb-10">
-      <div className="w-full h-72">
+      <div className="w-full h-72 rounded-lg overflow-hidden shadow-md border border-white/20">
         <img
           src={
             mission.links && mission.links.flickr_images.length > 0
               ? mission.links.flickr_images[0]
+              : mission.links.flickr_images.length === 0 &&
+                !mission.links.mission_patch_small
+              ? 'https://cdn.dribbble.com/users/610788/screenshots/5157282/media/916727c2ea5fdf615244f7b2402b9ebf.png?compress=1&resize=400x300&vertical=top'
               : mission.links.mission_patch_small
           }
           alt={mission.mission_name}
           className={`${
-            mission.links && mission.links.flickr_images.length > 0
-              ? 'object-cover'
-              : 'object-contain p-6'
-          } w-full h-full object-center rounded-lg shadow-md border border-white/20`}
+            mission.links.flickr_images.length === 0 &&
+            mission.links.mission_patch_small
+              ? 'object-contain p-6'
+              : 'object-cover'
+          } w-full h-full object-center`}
         />
       </div>
 
