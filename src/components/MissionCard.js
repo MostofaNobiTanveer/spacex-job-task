@@ -14,15 +14,19 @@ const MissionCard = ({ mission }) => {
               : mission.links.mission_patch_small
           }
           alt={mission.mission_name}
-          class="w-full h-full object-cover object-center rounded-lg shadow-md border border-white/20"
+          className={`${
+            mission.links && mission.links.flickr_images.length > 0
+              ? 'object-cover'
+              : 'object-contain p-6'
+          } w-full h-full object-center rounded-lg shadow-md border border-white/20`}
         />
       </div>
 
-      <div class="relative px-4 -mt-16">
-        <div class="bg-[#081432] p-6 rounded-lg shadow-lg">
-          <div class="flex items-center">
+      <div className="relative px-4 -mt-16">
+        <div className="bg-[#081432] p-6 rounded-lg shadow-lg">
+          <div className="flex items-center">
             <span
-              class={`${
+              className={`${
                 mission.launch_success
                   ? 'bg-teal-200 text-teal-800'
                   : mission.launch_success === null
@@ -36,20 +40,33 @@ const MissionCard = ({ mission }) => {
                 ? 'Upcoming'
                 : 'Failed'}
             </span>
-            <div class="ml-2 text-gray-400 uppercase text-xs font-semibold tracking-wider flex items-center gap-2">
-              <span class="flex items-center gap-2">
+            <div className="ml-2 text-gray-400 uppercase text-xs font-semibold tracking-wider flex items-center gap-1">
+              <span className="flex items-center gap-2">
                 <FaRocket className="text-teal-200" />
                 {mission.rocket && mission.rocket.rocket_name}
               </span>
-              &bull; {mission.launch_year}
+              {/* launch date */}
+              <span>
+                &bull;&nbsp;
+                {mission.launch_date_utc &&
+                  new Date(mission.launch_date_utc).toLocaleDateString(
+                    'en-US',
+                    {
+                      month: 'short',
+                      day: 'numeric',
+                      year: 'numeric',
+                    }
+                  )}
+              </span>
+              {/* &bull; {mission.launch_year} */}
             </div>
           </div>
 
-          <h4 class="my-2 text-xl text-white font-semibold uppercase leading-tight truncate">
+          <h4 className="my-2 text-xl text-white font-semibold uppercase leading-tight truncate">
             {mission.mission_name}
           </h4>
 
-          <div class="mt-1 text-gray-300 text-sm">
+          <div className="mt-1 text-gray-300 text-sm">
             {/* if details more than 100 then show see more button */}
             {mission.details && mission.details.length > 100 ? (
               <p>
@@ -58,7 +75,7 @@ const MissionCard = ({ mission }) => {
                   : mission.details.substring(0, 100)}
                 <button
                   onClick={() => setShowDetails(!showDetails)}
-                  class="text-xs text-teal-200 hover:underline"
+                  className="text-xs text-teal-200 hover:underline"
                 >
                   &nbsp;
                   {showDetails ? 'See less' : 'See more'}
@@ -68,16 +85,16 @@ const MissionCard = ({ mission }) => {
               mission.details
             )}
           </div>
-          <div class="mt-4 flex items-start gap-3">
-            {/* <span class="text-teal-300 font-semibold">
-              <RiRocketFill class="w-6 h-6" />
+          <div className="mt-4 flex items-start gap-3">
+            {/* <span className="text-teal-300 font-semibold">
+              <RiRocketFill className="w-6 h-6" />
             </span> */}
-            <span class="text-sm text-teal-200">
-              <span class="">
-                <RiRocketFill class="inline mr-1 mb-0.5" />
+            <span className="text-sm text-teal-200">
+              <span className="">
+                <RiRocketFill className="inline mr-1 mb-0.5" />
                 Launch site :{' '}
               </span>
-              <span class="text-sm text-gray-300">
+              <span className="text-sm text-gray-300">
                 {mission.launch_site && mission.launch_site.site_name_long}
               </span>
             </span>

@@ -9,8 +9,9 @@ const BgLayout = ({ children }) => {
         className="absolute opacity-20 pointer-events-none z-1 inset-0 object-cover top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
       ></img>
 
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-10">
         <svg
+          className="h-full w-full"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1439.86 809.94"
           preserveAspectRatio="none"
