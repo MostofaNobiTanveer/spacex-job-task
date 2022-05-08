@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { VscArrowRight } from 'react-icons/vsc';
 import { RiSearch2Line } from 'react-icons/ri';
-import { useSelector } from 'react-redux';
 
 const MissionsFilter = ({ handleOnChange }) => {
   const [keyword, setKeyword] = useState('');
@@ -26,7 +25,7 @@ const MissionsFilter = ({ handleOnChange }) => {
                   setKeyword(e.target.value);
                   handleOnChange(e.target.value);
                 }}
-                placeholder="Search by rocket name"
+                placeholder="Search by rocket/mission name"
               />
               <button
                 className="flex items-center justify-center rounded-full !leading-none disabled:bg-opacity-80 disabled:cursor-not-allowed bg-teal-400 hover:bg-opacity-90 text-black absolute right-2 sm:right-2.5 top-1/2 transform -translate-y-1/2  sm:w-11 sm:h-11 w-9 h-9 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 dark:focus:ring-offset-0"

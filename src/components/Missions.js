@@ -15,7 +15,6 @@ const Missions = () => {
     if (missions && keyword.trim()) {
       const filteredMissions = missions.filter((mission) => {
         return (
-          // rocket and mission name
           mission.mission_name.toLowerCase().includes(keyword.toLowerCase()) ||
           mission.rocket.rocket_name
             .toLowerCase()
@@ -32,7 +31,6 @@ const Missions = () => {
     if (!missions) {
       dispatch(getMissions());
     }
-    // set filter missions to all missions
     setFilteredMissions(missions);
   }, [dispatch, missions]);
   return (
