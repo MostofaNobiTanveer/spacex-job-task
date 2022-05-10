@@ -20,7 +20,10 @@ const Missions = () => {
       setFilteredMissions(missions.filter((mission) => mission.launch_success));
     } else if (args[0] === 'failed') {
       setFilteredMissions(
-        missions.filter((mission) => !mission.launch_success)
+        missions.filter(
+          (mission) =>
+            !mission.launch_success && mission.launch_success !== null
+        )
       );
     } else if (args[0] === 'upcoming') {
       setFilteredMissions(missions.filter((mission) => mission.upcoming));
